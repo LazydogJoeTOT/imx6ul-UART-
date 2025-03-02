@@ -2,7 +2,7 @@
 |                                                                                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 本组设计的功能描述与软硬件框图（含所有实现的模块功能）                                                                                                                                                             |
-| 本项目实现了在上位机进行源视频处理后，经过UART串口传输视频流到开发板并储存，最后解码并在LCD上播放的功能。<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)                                        |
+| 本项目实现了在上位机进行源视频处理后，经过UART串口传输视频流到开发板并储存，最后解码并在LCD上播放的功能。<br><br>                                       |
 | 本组设计的主要特色                                                                                                                                                                               |
 | 鉴于网络上并没有基于UART串口的视频流传输与播放的相关教程与资料，本组基于勇于探索与开发的精神原则，决定开发本次项目。<br><br>   在本项目中，创新性的使用了全新的视频流格式与异步通信信号交互技术，将UART串口的数据传输速率和数据完整度进一步提高。同时实现了开发板上的视频解码与播放技术，并将两技术有机结合，最终实现了基于UART串口的视频流传输与播放。 |
 
@@ -11,14 +11,14 @@
 |   |
 |---|
 |本组设计的核心流程和函数代码概要说明|
-|上位机传出模块主要相关代码及其备注<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)<br><br>开发板传入模块相关代码及其备注<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg)<br><br>开发板解码与播放模块相关代码及其备注<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg)<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg)<br><br>项目main函数以及外部中断主要代码及其备注<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg)<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image016.jpg)|
+|上位机传出模块主要相关代码及其备注<br><br><br><br>开发板传入模块相关代码及其备注<br><br><br><br>开发板解码与播放模块相关代码及其备注<br><br><br><br><br><br>项目main函数以及外部中断主要代码及其备注<br><br>
 
   
 
 |   |
 |---|
 |本组设计工程文件组织与Makefile编写|
-|相比之前实验，本项目新增/bsp/video文件夹及文件夹下附属文件，用以安放视频流处理相关模块代码。Makefile根据项目工程文件组织新增对应依赖与头文件，并新增imx命令以实现便捷sd卡烧写<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image018.jpg)<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image020.jpg)![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image022.jpg)|
+|相比之前实验，本项目新增/bsp/video文件夹及文件夹下附属文件，用以安放视频流处理相关模块代码。Makefile根据项目工程文件组织新增对应依赖与头文件，并新增imx命令以实现便捷sd卡烧写
 
   
 
@@ -32,5 +32,4 @@
 |   |
 |---|
 |本组设计中的关键模块流程图及性能测试|
-|![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image023.jpg)<br><br>本实验串口设置波特率为115200，理论有效数据传输速率为115200/8*8/9≈12.8kb/s，考虑到两机间同步信号的传输、两机其他函数的资源占用及其他损耗，实际有效数据传输速率约为10kb/s上下浮动。<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image025.jpg)<br><br>视频流分辨率为128*64，帧率为10fps，在视频格式合理的情况下需求数据传输速率约为10kb/s，符合串口数据传输要求。<br><br>![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image026.gif)![](file:///C:/Users/86187/AppData/Local/Temp/msohtmlclip1/01/clip_image027.gif)|
-
+|<br><br>本实验串口设置波特率为115200，理论有效数据传输速率为115200/8*8/9≈12.8kb/s，考虑到两机间同步信号的传输、两机其他函数的资源占用及其他损耗，实际有效数据传输速率约为10kb/s上下浮动。<br><br><br><br>视频流分辨率为128*64，帧率为10fps，在视频格式合理的情况下需求数据传输速率约为10kb/s，符合串口数据传输要求。<br><br>
